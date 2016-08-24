@@ -16,17 +16,23 @@ ServoDesignerはBased on ScratchのMESH機能を有効にするので、サー�
 ##構成図
 
 ServoDesigner/Based on Scratch
+
 ↓ (Remote Sensor Protocolによる通信)
+
 Servo Server（サーボを制御するプログラム）/Python等
+
 ↓ (GPIO, firmata, i2C等)
+
 コントローラ（Arduino, サーボコントローラ等）
+
 ↓
+
 サーボ（同時に制御できるのは30個まで）
 
 #Demo
-movie 1 -- サーボスプライトの作成とサーボ値の設定
-movie 2 -- 見た目ブロックによるサーボスプライトの変更
-movie 3 -- ブロードキャストメッセージの利用
+![サーボスプライトの作成とサーボ値の設定](https://raw.githubusercontent.com/wiki/EiichiroIto/ServoDesigner/images/sd1.gif)
+![見た目ブロックによるサーボスプライトの変更](https://raw.githubusercontent.com/wiki/EiichiroIto/ServoDesigner/images/sd2.gif)
+![ブロードキャストメッセージの利用](https://raw.githubusercontent.com/wiki/EiichiroIto/ServoDesigner/images/sd3.gif)
 
 #Requirement
 *Scratch 1.4
