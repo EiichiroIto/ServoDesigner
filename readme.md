@@ -62,7 +62,7 @@ Servo Server（サーボを制御するプログラム）/Python等
 #Install
 ##イメージからのインストール
 1. インストーラを使わず、新たにScratch 1.4をインストールする。
-2. このパッケージに付属するServoDesigner.imageとServoDesigner.changesを、インストールしたScratch 1.4のフォルダに展開した内容をコピーする。
+2. このパッケージに付属するServoDesigner.imageとServoDesigner.changesを、インストールしたScratch 1.4のフォルダにコピーする。
 3. ServoDesigner.imageをScratchアプリケーションにドラッグ＆ドロップしてScratchを起動する。
 
 ##csファイルからのインストール
