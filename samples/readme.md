@@ -13,3 +13,5 @@ Arduinoのdigital IOピンを使ってサーボを制御する場合のサンプ
 3. 共有メニューからJoin Meshを選び、127.0.0.1 と入力してOKを押してください。
 4. サーボスプライトを作成して、適当なサーボ値を設定し、'servo changedを送る'を押してください。
 
+##Circuit
+![firmata_sampleで利用した回路例](https://raw.githubusercontent.com/wiki/EiichiroIto/ServoDesigner/images/firmata_sample.png)
