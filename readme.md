@@ -35,13 +35,13 @@ Servo Server（サーボを制御するプログラム）/Python等
 ![ブロードキャストメッセージの利用](https://raw.githubusercontent.com/wiki/EiichiroIto/ServoDesigner/images/sd3.gif)
 
 #Requirement
-*Scratch 1.4
-*Scratch Source Code 1.4 -- csファイルからのインストールの場合
+* Scratch 1.4
+* Scratch Source Code 1.4 -- csファイルからのインストールの場合
 
 ##実際にサーボを動かす場合には以下が必要
-*サーボモータ
-*サーボコントローラ
-*Python環境(Python 2.7)
+* サーボモータ
+* サーボコントローラ
+* Python環境(Python 2.7)
 
 #Usage
 ##サーボスプライトの作成とサーボ値の設定
@@ -85,6 +85,7 @@ The MIT License (MIT)
 
 #Option
 Scratch.iniで設定するサーボ数を変更することができる。（以下は例）
+
 `ServoChannels=28`
 
 
