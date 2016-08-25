@@ -32,12 +32,13 @@ Raspberry piにi2cで接続したサーボドライバを使って2個のサー�
 [PCA9685]: https://www.amazon.co.jp/gp/product/B00WBYELB2/ "PCA9685"
 
 ##Usage
-1. Raspberry pi上で　python i2c_sample.py と入力して起動します。エラーが出ていないことを確認してください。
+1. Raspberry pi上で python i2c_sample.py と入力して起動します。エラーが出ていないことを確認してください。
 2. ServoDesignerを起動します。
 3. 共有メニューからJoin Meshを選び、Raspberry piのIPアドレスを入力してOKを押してください。
 4. サーボスプライトを作成して、適当なサーボ値を設定し、'servo changedを送る'を押してください。
 
 ##Install
+Raspberry pi上で以下のようにAdafruit_Python_PCA9685パッケージをインストールしてください。
 1. `sudo pip install adafruit-pca9685`
 
 ##Circuit
