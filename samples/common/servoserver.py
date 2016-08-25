@@ -2,7 +2,7 @@ from rsserver import RemoteSensorServer
 
 class ServoServer(RemoteSensorServer):
     def __init__(self, callback=None):
-        RemoteSensorServer.__init__(self)
+        RemoteSensorServer.__init__(self, host='')
         self.callback = callback
         self.channels = [0]*30
         self.channel2index = {}
