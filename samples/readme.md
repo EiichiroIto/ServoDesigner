@@ -23,10 +23,13 @@ Arduinoのdigital IOピンを使って2個のサーボを制御する場合の�
 Raspberry piにi2cで接続したサーボドライバを使って2個のサーボを制御する場合のサンプルプログラムです。
 
 ##Requirement
-* Adafruit_Python_PCA9685 パッケージが必要です。 ![Adafruit_Python_PCA9685](https://github.com/adafruit/Adafruit_Python_PCA9685)
-* PCA9685を使った16ch 12bitのPWMサーボドライバが必要です。 ![使用したもの](https://www.amazon.co.jp/gp/product/B00WBYELB2/)
+* Adafruit_Python_PCA9685 パッケージが必要です。 [Adafruit_Python_PCA9685][]
+* PCA9685を使った16ch 12bitのPWMサーボドライバが必要です。 [PCA9685][]
 * サーボドライバのi2cアドレスはデフォルトとなっていますので、変更した場合は適切なものに変えてから使ってください。
 * 2個以上のサーボを使う場合はサンプルを適宜修正してください。
+
+[Adafruit_Python_PCA9685]: https://github.com/adafruit/Adafruit_Python_PCA9685 "Adafruit_Python_PCA9685"
+[PCA9685]: https://www.amazon.co.jp/gp/product/B00WBYELB2/ "PCA9685"
 
 ##Usage
 1. python i2c_sample.py で起動します。エラーが出ていないことを確認してください。
