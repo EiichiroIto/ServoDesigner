@@ -14,20 +14,13 @@ ServoDesignerはBased on ScratchのMESH機能を有効にするので、サー�
 サンプルとしてArduinoでfirmataを使ってサーボ制御を行うPythonプログラムの例と、Raspberry piでwiringpiを用いたi2C通信によりサーボ制御を行うPythonプログラムの例を用意していますので、それぞれの環境に応じて、適切なプログラムを用意してください。
 
 ##構成図
-
 ServoDesigner/Based on Scratch
 
-↓ (Remote Sensor Protocolによる通信)
+--> Programs that controls servo motors (Remote Sensor Protocolによる通信)
 
-Servo Server（サーボを制御するプログラム）/Python等
+--> Servo Controller (GPIO, firmata, i2c 等)
 
-↓ (GPIO, firmata, i2C等)
-
-コントローラ（Arduino, サーボコントローラ等）
-
-↓
-
-サーボ（同時に制御できるのは30個まで）
+--> Servo Motors (最大30個までのサーボモータ)
 
 #Demo
 ![サーボスプライトの作成とサーボ値の設定](https://raw.githubusercontent.com/wiki/EiichiroIto/ServoDesigner/images/sd1.gif)
