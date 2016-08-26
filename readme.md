@@ -2,90 +2,83 @@ ServoDesigner
 ====
 
 #Overview
-ServoDesignerは、複数のサーボを同時に制御するための支援を行うScratch拡張です。
+ServoDesigner is a Scratch Mod for controlling multiple servo motors at the same time.
 
-最大30個までのサーボ値を同時に設定したり、切り替えたりすることができます。ServoDesignerにはサーボを直接制御する機能はありませんが、サーボを制御するプログラムとネットワーク接続することで、間接的に制御します。
+It can set and change PWM value up to 30 servos. Although ServoDesigner can not control servos directly, it controls indirectly using network communication with program that controls servos.
 
 #Description
-ServoDesignerは、Based on Scratchでサーボ制御を行うスプライトとして組み込まれます。プロジェクトにサーボのスプライトを追加すると、サーボ値に対応するch1〜ch20までの変数が自動的に作成されます。サーボのスプライトのコスチュームを編集することで、複数のサーボ値を一度に指定します。コスチュームを切り替えるとサーボ値に対応する変数の内容が変わり、同時にブロードキャストメッセージが送信されます。
+ServoDesigner provides servo sprites and looks blocks. A servo sprite is added to project then it creates new 20 variables corresponding to servo channels.
+ Multiple servo values are set up at the same time by editing a servo sprite's costume. Variables are changed and broadcast message 'servo changed' is sent whenever costume is changed.
 
-ServoDesignerはBased on ScratchのMESH機能を有効にするので、サーボ値に対応する変数の内容やブロードキャストメッセージが自動的に送られます。ただし、ServoDesignerからRemote Sensor Protocol経由でサーボ値を受け取り、サーボを制御するプログラムは、実際に利用する機器に応じて作成する必要があります。
+ServoDesigner enables 'Mesh network' of Based on Scratch. If 'Host Mesh' or 'Join Mesh' is started, Based on Scratch sends every servo variable changes to network-connected programs. You need to make a program that receives variables and broadcast messages through 'Remote Sensor Protocol' and controls servo motors.
 
-サンプルとしてArduinoでfirmataを使ってサーボ制御を行うPythonプログラムの例と、Raspberry piでwiringpiを用いたi2C通信によりサーボ制御を行うPythonプログラムの例を用意していますので、それぞれの環境に応じて、適切なプログラムを用意してください。
+Two sample programs (controls servo using Arduino with firmata and using Raspberry-pi with servo controller via i2c protocol) are provided. You can modify freely these programs for your system.
 
-##構成図
-
+##Block
 ServoDesigner/Based on Scratch
 
-↓ (Remote Sensor Protocolによる通信)
+--> Programs that controls servo motors (via Remote Sensor Protocol)
 
-Servo Server（サーボを制御するプログラム）/Python等
+--> Servo Controller (GPIO, firmata, i2c etc)
 
-↓ (GPIO, firmata, i2C等)
-
-コントローラ（Arduino, サーボコントローラ等）
-
-↓
-
-サーボ（同時に制御できるのは30個まで）
+Servo Motors (Maximum of 30 motors)
 
 #Demo
-![サーボスプライトの作成とサーボ値の設定](https://raw.githubusercontent.com/wiki/EiichiroIto/ServoDesigner/images/sd1.gif)
-![見た目ブロックによるサーボスプライトの変更](https://raw.githubusercontent.com/wiki/EiichiroIto/ServoDesigner/images/sd2.gif)
-![ブロードキャストメッセージの利用](https://raw.githubusercontent.com/wiki/EiichiroIto/ServoDesigner/images/sd3.gif)
+![Creating a servo sprite and set up servo values](https://raw.githubusercontent.com/wiki/EiichiroIto/ServoDesigner/images/sd1.gif)
+![Changing servo sprite by Looks block](https://raw.githubusercontent.com/wiki/EiichiroIto/ServoDesigner/images/sd2.gif)
+![Using broadcast message](https://raw.githubusercontent.com/wiki/EiichiroIto/ServoDesigner/images/sd3.gif)
 
 #Requirement
 * Scratch 1.4
-* Scratch Source Code 1.4 -- csファイルからのインストールの場合
+* Scratch Source Code 1.4 -- install from cs file
 
-##実際にサーボを動かす場合には以下が必要
-* サーボモータ
-* サーボコントローラ
-* Python環境(Python 2.7)
+##Additional requirement
+* Servo motors.
+* Servo controller like PCA9685.
+* Python environment (Python 2.7) for sample programs.
 
 #Usage
-##サーボスプライトの作成とサーボ値の設定
-1. ステージを右クリックして、"サーボスプライトを作る"を選ぶ。
-2. "コスチューム"タブを選び、表示されているコスチュームでEditボタンを押す。
-3. "サーボエディタ"を開いて、各サーボに対応した変数ウォッチャーのスライダーを変更する。
-4. 変数ウォッチャーをクリックすると、ダイアログボックスが現れるので直接サーボの値を入力する。
-5. "servo changedを送る"ボタンを押すと、servo changedがブロードキャストメッセージとして送られる。
-6. "常に送る"を選べば、変数ウォッチャーを変更するたびに自動的にブロードキャストメッセージが送られる。
-7. "全て〜を設定"ボタンを押せば、0, 128, 255 または入力した値が、全ての変数ウォッチャーに設定される。
+##Creating a servo sprite and set up servo value
+1. Right click on stage, and select 'create new servo sprite'.
+2. Select Costume tab, and click edit button of costume.
+3. Servo Editor opens, then change variable watchers using slider.
+4. Clicking on variable watcher Dialog box appears. Enter a servo value.
+5. Clicking 'send servo changed' button, it sends 'servo changed' as broadcast message.
+6. Selecting 'always send', automatically sends broadcast whenever variable watchers changes.
+7. Clicking 'Set all to ' buttons, it sets up all variables to 0, 128, 255 or entered value.
 
-##見た目(Looks)ブロックを使う
-1. "見た目"のブロックカテゴリを選ぶ。
-2. "2秒でコスチュームをservoにする"のブロックをスクリプトに置く。
-3. 2秒のところを適当な秒数に変える。
-4. servoのところを適当なコスチュームに変える。
+##Using Looks block
+1. Select Looks block category.
+2. Put 'switch to costume servo in 2 secs' block to script pane.
+3. You may change time and costume name.
+4. Click the block.
 
 #Install
-##イメージからのインストール
-1. インストーラを使わず、新たにScratch 1.4をインストールする。
-2. このパッケージに付属するServoDesigner.imageとServoDesigner.changesを、インストールしたScratch 1.4のフォルダにコピーする。
-3. ServoDesigner.imageをScratchアプリケーションにドラッグ＆ドロップしてScratchを起動する。
+##Install from image file
+1. Install new Scratch 1.4 without using installer. (Extract compressed file)
+2. Copy ServoDesigner.image and ServoDesigner.changes to the installed folder.
+3. Drag ServoDesigner.image to Scratch application to start ServoDesigner.
 
-##csファイルからのインストール
-1. インストーラを使わず、新たにScratch 1.4をインストールする。
-2. ScratchSourceCode1.4を展開して、インストールしたScratch 1.4のフォルダに展開した内容をコピーする。
-3. ScratchSourceCode1.4.imageをScratchアプリケーションにドラッグ＆ドロップしてScratchを起動する。
-4. WorkspaceとSystem Browserのウィンドウを両方とも閉じる。閉じる際にChanges have not been saved...のダイアログが出たらYesを選ぶ。
-5. シフトキーを押しながらデスクトップをクリックして"find window"メニューを出し、Scratch Frameを選ぶ。
-6. Scratchのウィンドウの左上に現れたクローズボタンをクリックして閉じる。
-7. 空になったデスクトップをクリックしてopen...を選び、file listのメニュー項目を選ぶ。
-8. File Listウィンドウの右上のペインで、ServoDesigner.*.csを選ぶ。（*は何らかの数値）
-9. 右上のペインの左端にスクロールバーが現れるので、その上にあるメニューボタンを押して、fileInを選ぶ。
-10. デスクトップをクリックしてopen...を選び、Scratchのメニュー項目を選ぶ。
-11. Based on Scratchが起動するので、シフトキーを押しながらFileメニューを選び、Save Image in User Modeを選ぶ。
-12. Close non-Scratch windows...のダイアログでYesを選ぶ。
-13. 自動的にScratchが閉じて完了する。
+##Install from cs file
+1. Install new Scratch 1.4 without using installer. (Extract compressed file)
+2. Extract ScratchSourceCode1.4 and copy files to installed folder.
+3. Drag ServoDesigner.image to Scratch application to start Based on Scratch.
+4. Close all windows. Select yes when 'Changes have not been saved...' dialog box appears.
+5. Click desktop with pressing shift key to show 'find window' menu and select Scratch Frame.
+6. Click close button on top left of Scratch window.
+7. Click empty desktop and select 'open...' then 'file list' menu item.
+8. Select 'ServoDesigner.cs' item on top right pane of File List window.
+9. It will appear a scroll bar on the left side of top right pane. Click menu button above the scroll bar and select 'fileIn' menu item.
+10. Click desktop and select 'open...' then 'Scratch' menu item.
+11. After starting Based on Scratch, select 'File' menu with pressing shift-key and select 'Save Image in User Mode' menu item.
+12. Select yes when 'Close non-Scratch windows...' dialog box appears.
+13. Finished.
 
 #License
 The MIT License (MIT)
 
 #Option
-Scratch.iniで設定するサーボ数を変更することができる。（以下は例）
+You can change the number of servos using setting file: 'Scratch.ini'.
 
 `ServoChannels=28`
-
 

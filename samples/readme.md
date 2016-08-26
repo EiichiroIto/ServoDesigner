@@ -39,6 +39,7 @@ Raspberry piにi2cで接続したサーボドライバを使って2個のサー�
 
 ##Install
 Raspberry pi上で以下のようにAdafruit_Python_PCA9685パッケージをインストールしてください。
+
 1. `sudo pip install adafruit-pca9685`
 
 ##Circuit
