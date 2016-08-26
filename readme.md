@@ -15,14 +15,14 @@ ServoDesigner enables 'Mesh network' of Based on Scratch. If 'Host Mesh' or 'Joi
 
 Two sample programs (controls servo using Arduino with firmata and using Raspberry-pi with servo controller via i2c protocol) are provided. You can modify freely these programs for your system.
 
-##Block
+##System Diagram
 ServoDesigner/Based on Scratch
 
 --> Programs that controls servo motors (via Remote Sensor Protocol)
 
 --> Servo Controller (GPIO, firmata, i2c etc)
 
-Servo Motors (Maximum of 30 motors)
+--> Servo Motors (Maximum of 30 motors)
 
 #Demo
 ![Creating a servo sprite and set up servo values](https://raw.githubusercontent.com/wiki/EiichiroIto/ServoDesigner/images/sd1.gif)
