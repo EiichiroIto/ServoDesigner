@@ -1,5 +1,6 @@
 ServoDesigner
 ====
+https://github.com/EiichiroIto/ServoDesigner/blob/master/readme.ja.md "Japanese readme"
 
 #Overview
 ServoDesigner is a Scratch Mod for controlling multiple servo motors at the same time.
@@ -34,7 +35,7 @@ Servo Motors (Maximum of 30 motors)
 
 ##Additional requirement
 * Servo motors.
-* Servo controller like PCA9685.
+* Servo controller like Arduino or PCA9685.
 * Python environment (Python 2.7) for sample programs.
 
 #Usage
