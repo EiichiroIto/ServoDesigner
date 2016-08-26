@@ -1,6 +1,6 @@
 ServoDesigner
 ====
-https://github.com/EiichiroIto/ServoDesigner/blob/master/readme.ja.md "Japanese readme"
+[Readme in Japanese]: https://github.com/EiichiroIto/ServoDesigner/blob/master/readme.ja.md "Readme in Japanese"
 
 #Overview
 ServoDesigner is a Scratch Mod for controlling multiple servo motors at the same time.
