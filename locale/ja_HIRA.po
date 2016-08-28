@@ -1922,6 +1922,21 @@ msgstr "シロホン"
 # ServoDesigner
 ############################################
 
+msgid "Show IP Address"
+msgstr "IPアドレスをひょうじする"
+
+msgid "Stop Hosting Mesh"
+msgstr "Meshホスティングをとめる"
+
+msgid "Leave Mesh"
+msgstr "Meshからはなれる"
+
+msgid "Host Mesh"
+msgstr "Meshホスティングをはじめる"
+
+msgid "Join Mesh"
+msgstr "Meshにくわわる"
+
 msgid "create new Servo sprite"
 msgstr "サーボスプライトをつくる"
 

@@ -46,7 +46,7 @@ ServoDesigner/Based on Scratch
 4. Clicking on variable watcher Dialog box appears. Enter a servo value.
 5. Clicking 'send servo changed' button, it sends 'servo changed' as broadcast message.
 6. Selecting 'always send', automatically sends broadcast whenever variable watchers changes.
-7. Clicking 'Set all to ' buttons, it sets up all variables to 0, 128, 255 or entered value.
+7. Clicking 'Set all to ' buttons, it sets up all variables to 0, 128, 255 or specified value.
 
 ##Using Looks block
 1. Select Looks block category.
