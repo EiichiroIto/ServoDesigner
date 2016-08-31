@@ -5,7 +5,7 @@ ServoDesigner
 #Overview
 ServoDesigner is a Scratch Mod for controlling multiple servo motors at the same time.
 
-It can set and change PWM value up to 30 servos. Although ServoDesigner can not control servos directly, it controls indirectly using a program that controls servos via network communication.
+It can set and change PWM value up to 30 servos. Although ServoDesigner can not control servos directly, it controls indirectly using a program that controls servos via [Remote Sensor Protocol](https://wiki.scratch.mit.edu/wiki/Remote_Sensors_Protocol)"Remote Sensor Protocol".
 
 #Description
 ServoDesigner provides servo sprites and looks blocks. A servo sprite is added to project then it creates new 20 variables corresponding to servo channels.
@@ -39,6 +39,11 @@ ServoDesigner/Based on Scratch
 * Python environment (Python 2.7) for sample programs.
 
 #Usage
+##Connecting to servo controlling program
+1. Start a program that processes Remote Sensor Protocol and controls servos.
+2. Click Share menu and select 'Join Mesh'.
+3. Enter an IP address of the PC that runs servo controlling program.
+
 ##Creating a servo sprite and set up servo value
 1. Right click on stage, and select 'create new servo sprite'.
 2. Select Costume tab, and click edit button of costume.

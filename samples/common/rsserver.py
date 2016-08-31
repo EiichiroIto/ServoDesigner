@@ -116,15 +116,6 @@ class RemoteSensorServer:
           socket.send(message)
 #          print "sent message:"+message
 
-  def makeCamera(self, image):
-    message = self.controller.cameraFormat+" "+base64.b64encode(image)
-    message = message.encode('utf-8')
-    return makeHeader(message)+message
-
-  def camera(self, image):
-    message = self.makeCamera(image)
-    self.send(message)
-
   def sensorUpdate(self, dic):
     print "sensorUpdate:"
     for key in dic:
