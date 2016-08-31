@@ -4,7 +4,7 @@ ServoDesigner
 #Overview
 ServoDesignerは、複数のサーボを同時に制御するための支援を行うScratch拡張です。
 
-最大30個までのサーボ値を同時に設定したり、切り替えたりすることができます。ServoDesignerにはサーボを直接制御する機能はありませんが、サーボを制御するプログラムとRemote Sensor Protocolでネットワーク接続することにより、間接的に制御します。
+最大30個までのサーボ値を同時に設定したり、切り替えたりすることができます。ServoDesignerにはサーボを直接制御する機能はありませんが、サーボを制御するプログラムと[Remote Sensor Protocol](https://wiki.scratch.mit.edu/wiki/Remote_Sensors_Protocol)でネットワーク接続することにより、間接的に制御します。
 
 #Description
 ServoDesignerは、Based on Scratchでサーボ制御を行うスプライトとして組み込まれます。プロジェクトにサーボのスプライトを追加すると、サーボ値に対応するch1〜ch20までの変数が自動的に作成されます。サーボのスプライトのコスチュームを編集することで、複数のサーボ値を一度に指定します。コスチュームを切り替えるとサーボ値に対応する変数の内容が変わり、同時にブロードキャストメッセージが送信されます。
